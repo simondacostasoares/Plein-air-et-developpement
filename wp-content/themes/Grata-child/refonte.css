@@ -1,0 +1,237 @@
+/* Corrections et retouches visuelles de la version statique (2026) */
+
+:root {
+	--bleu: #488fb2;
+	--bleu-fonce: #2f6784;
+	--orange: #f4a641;
+	--texte: #3a3a3a;
+	--fond-doux: #f6f8fa;
+	--rayon: 10px;
+	--ombre: 0 6px 24px rgba(30, 60, 80, 0.08);
+}
+
+/* ---------- Texte : plus grand, plus lisible, sans justification ---------- */
+body {
+	color: var(--texte);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+html body p:not(.size_big) {
+	font-size: 16px !important;
+	line-height: 1.7;
+	text-align: left;
+}
+.l-main .l-section-h,
+.l-main .l-section-h li {
+	font-size: 16px;
+	line-height: 1.7;
+}
+html body .cadre {
+	text-align: left;
+}
+.l-section li {
+	line-height: 1.65;
+}
+h1, h2 {
+	letter-spacing: -0.01em;
+}
+
+/* ---------- Animations d'apparition : contenu toujours visible ---------- */
+.l-section[class*="animate_"] {
+	opacity: 1 !important;
+	transform: none !important;
+	animation: none !important;
+}
+
+/* ---------- En-tête ---------- */
+.l-header {
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+.w-nav-anchor.level_1 {
+	border-radius: 30px !important;
+}
+@media (max-width: 1024px) {
+	.l-header.full_width .l-header-h {
+		text-align: left;
+		position: relative;
+	}
+	.l-header .w-logo {
+		margin: 0;
+		padding-left: 15px;
+	}
+	.l-header .w-logo-img {
+		height: 30px !important;
+		width: auto;
+	}
+	.l-header .w-nav-control {
+		position: absolute;
+		top: 0;
+		right: 10px;
+	}
+}
+
+/* ---------- Témoignages : hauteur libre, cartes de même taille ---------- */
+.w-testimonial-content {
+	height: auto !important;
+	color: var(--texte) !important;
+	font-style: italic;
+}
+.w-testimonial {
+	background: #fff;
+	border-radius: var(--rayon);
+	box-shadow: var(--ombre);
+	border-color: transparent !important;
+	padding: 30px 35px;
+}
+.g-cols:has(> .one-half > .w-testimonial) {
+	display: flex;
+	flex-wrap: wrap;
+}
+.g-cols:has(> .one-half > .w-testimonial) > .one-half {
+	display: flex;
+}
+.g-cols:has(> .one-half > .w-testimonial) .w-testimonial {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.w-testimonial-person {
+	margin-top: 20px;
+}
+@media (max-width: 900px) {
+	.g-cols:has(> .one-half > .w-testimonial) > .one-half {
+		flex: 1 1 100%;
+	}
+}
+
+/* ---------- Cartes « Découvrez nos formations » ---------- */
+.w-pricing {
+	display: flex;
+	align-items: stretch;
+	gap: 24px;
+}
+.w-pricing .w-pricing-item,
+.w-pricing .w-pricing-item.type_featured {
+	flex: 1 1 0;
+	display: flex;
+	width: auto !important;
+	padding: 0 !important;
+}
+.w-pricing .w-pricing-item-h,
+.w-pricing .w-pricing-item.type_featured .w-pricing-item-h {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0 !important;
+	border-radius: var(--rayon);
+	overflow: hidden;
+	border: none !important;
+	box-shadow: var(--ombre);
+}
+.w-pricing .w-pricing-item-title,
+.w-pricing .w-pricing-item.type_featured .w-pricing-item-title {
+	padding: 22px 20px;
+}
+.w-pricing .w-pricing-item-price {
+	display: none;
+}
+.w-pricing .w-pricing-item-features {
+	padding: 20px 0 !important;
+	flex: 1 1 auto;
+}
+.w-pricing .w-pricing-item-footer,
+.w-pricing .w-pricing-item.type_featured .w-pricing-item-footer {
+	margin-top: auto;
+	padding: 10px 20px 30px;
+}
+.w-pricing .w-pricing-item-footer-button {
+	white-space: normal;
+	max-width: 100%;
+	line-height: 1.4 !important;
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+	height: auto !important;
+}
+@media (max-width: 900px) {
+	.w-pricing {
+		flex-direction: column;
+	}
+}
+
+/* ---------- Boutons ---------- */
+.g-btn {
+	border-radius: 30px !important;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+}
+@media (max-width: 900px) {
+	.g-btn {
+		white-space: normal !important;
+		max-width: 100%;
+		height: auto !important;
+		line-height: 1.4 !important;
+		padding-top: 12px !important;
+		padding-bottom: 12px !important;
+	}
+}
+.no-touch .g-btn:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Images et blocs ---------- */
+.l-section img.full,
+.l-section .one-half > p > img,
+.l-section .one-third > p > img,
+.w-image img {
+	border-radius: var(--rayon);
+}
+.w-iconbox-icon {
+	transition: transform 0.2s ease;
+}
+.cadre {
+	border-radius: var(--rayon);
+	border: none !important;
+}
+.w-actionbox {
+	border-radius: var(--rayon);
+}
+.w-tabs-section,
+.w-tabs-item-h {
+	border-radius: var(--rayon);
+}
+
+/* ---------- Bloc contact ---------- */
+#contactez-nous a,
+.l-subfooter a {
+	transition: opacity 0.2s ease;
+}
+#contactez-nous a .w-iconbox-title,
+#contactez-nous .w-iconbox-title,
+#contactez-nous p {
+	color: #fff !important;
+}
+#contactez-nous .w-iconbox-title {
+	font-size: 17px !important;
+}
+.no-touch #contactez-nous a:hover {
+	opacity: 0.8;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+	html body p:not(.size_big),
+	.l-main .l-section-h,
+	.l-main .l-section-h li {
+		font-size: 15px !important;
+	}
+	h1 {
+		font-size: 28px !important;
+	}
+	h2 {
+		font-size: 24px !important;
+	}
+	.w-testimonial {
+		padding: 22px 24px;
+	}
+}
